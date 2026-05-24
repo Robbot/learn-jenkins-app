@@ -2,18 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Debug') {
-        steps {
-        sh '''
-        whoami
-        id
-        pwd
-        echo HOME=$HOME
-        env | sort
-        ls -ld /
-        '''
-        }
-    }
         stage('Build') {
             agent {
                 docker {
